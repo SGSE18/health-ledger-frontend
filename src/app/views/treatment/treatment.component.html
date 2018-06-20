@@ -1,38 +1,45 @@
 <mat-card *ngIf="treatment?.diagnose">
-    <mat-card-title>Diagnose</mat-card-title>
-    <mat-card-content>
-      <mat-form-field>
-        <input matInput placeholder="Bezeichnung" [(ngModel)]="treatment?.diagnose.title" readonly/>
-      </mat-form-field>
-      <mat-form-field>
-        <textarea matInput placeholder="Beschreibung" [(ngModel)]="treatment?.diagnose.description" readonly></textarea>
-      </mat-form-field>
-    </mat-card-content>
+  <mat-card-title>Diagnose</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput placeholder="Bezeichnung" [(ngModel)]="treatment?.diagnose.title" readonly/>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Beschreibung" [(ngModel)]="treatment?.diagnose.description" readonly></textarea>
+    </mat-form-field>
+  </mat-card-content>
 </mat-card>
 
 <mat-card *ngIf="treatment?.prescription">
-    <mat-card-title>Rezept</mat-card-title>
-    <mat-card-content>
-      <mat-form-field>
-        <input matInput placeholder="Wirkstoff" [(ngModel)]="treatment?.prescription.drug" readonly/>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Dosierung" [(ngModel)]="treatment?.prescription.dosage" readonly/>
-      </mat-form-field>
-      <mat-form-field>
-        <textarea matInput placeholder="Notiz" [(ngModel)]="treatment?.prescription.note" readonly></textarea>
-      </mat-form-field>
-    </mat-card-content>
+  <mat-card-title>Rezept</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput placeholder="Wirkstoff" [(ngModel)]="treatment?.prescription.drug" readonly/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Dosierung" [(ngModel)]="treatment?.prescription.dosage" readonly/>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Notiz" [(ngModel)]="treatment?.prescription.note" readonly></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-checkbox [(ngModel)]="treatment?.prescription.redeemed" readonly>
+        Eingelöst
+      </mat-checkbox>
+    </mat-form-field>
+  </mat-card-content>
 </mat-card>
 
 <mat-card *ngIf="treatment?.attestation">
-    <mat-card-title>Arbeitsunfähigkeit</mat-card-title>
-    <mat-card-content>
-      <mat-form-field>
-        <input matInput placeholder="Beginn der Arbeitsunfähigkeit" [value]="treatment?.attestation.from | date:'dd.MM.yyyy'" readonly />
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Ende der Arbeitsunfähigkeit" [value]="treatment?.attestation?.to | date:'dd.MM.yyyy'" readonly />
-      </mat-form-field>
-    </mat-card-content>
+  <mat-card-title>Arbeitsunfähigkeit</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput placeholder="Beginn der Arbeitsunfähigkeit" [value]="treatment?.attestation.from | date:'dd.MM.yyyy'" readonly
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Ende der Arbeitsunfähigkeit" [value]="treatment?.attestation?.to | date:'dd.MM.yyyy'" readonly
+      />
+    </mat-form-field>
+  </mat-card-content>
 </mat-card>
