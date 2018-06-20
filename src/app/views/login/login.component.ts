@@ -14,6 +14,9 @@ export class LoginComponent implements OnInit {
   constructor(private storageService: StorageService, private stateService: StateService) { }
 
   ngOnInit() {
+      if(this.storageService.getItem("FabricCert")) {
+        this.showSpinner = true;
+      }
       this.stateService.autoLoginFromStorage();
   }
 

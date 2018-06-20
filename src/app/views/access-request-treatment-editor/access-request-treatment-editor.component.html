@@ -1,5 +1,5 @@
-<div fxLayout="column" fxLayoutAlign="space-around stretch" >
-    <div fxLayout="row" fxLayoutAlign="start center" >
+<div fxLayout="column" fxLayoutAlign="space-around stretch">
+    <div fxLayout="row" fxLayoutAlign="start center">
         <spinner-button [options]="saveButtonOptions" (click)="onSave()"></spinner-button>
         <button mat-raised-button color="accent" (click)="onCancel()">Zurück</button>
     </div>
@@ -8,7 +8,7 @@
         <mat-card-title>Diagnose</mat-card-title>
         <mat-card-content>
             <mat-form-field>
-                <input matInput placeholder="Bezeichnung" [(ngModel)]="treatment?.diagnose.title"/>
+                <input matInput placeholder="Bezeichnung" [(ngModel)]="treatment?.diagnose.title" />
             </mat-form-field>
             <mat-form-field>
                 <textarea matInput placeholder="Beschreibung" [(ngModel)]="treatment?.diagnose.description"></textarea>
@@ -22,13 +22,18 @@
         </mat-card-title>
         <mat-card-content *ngIf="treatment?.prescription != null">
             <mat-form-field>
-                <input matInput placeholder="Wirkstoff" [(ngModel)]="treatment?.prescription.drug"/>
+                <input matInput placeholder="Wirkstoff" [(ngModel)]="treatment?.prescription.drug" />
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Dosierung" [(ngModel)]="treatment?.prescription.dosage"/>
+                <input matInput placeholder="Dosierung" [(ngModel)]="treatment?.prescription.dosage" />
             </mat-form-field>
             <mat-form-field>
                 <textarea matInput placeholder="Notiz" [(ngModel)]="treatment?.prescription.note"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-checkbox [(ngModel)]="treatment?.prescription.redeemed">
+                    Eingelöst
+                </mat-checkbox>
             </mat-form-field>
         </mat-card-content>
     </mat-card>
@@ -51,5 +56,5 @@
             </mat-form-field>
         </mat-card-content>
     </mat-card>
-          
+
 </div>
