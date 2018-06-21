@@ -39,8 +39,8 @@ export class AccessRequestResultTreatmentComponent implements OnInit {
     this.route.params.map(p => p.request).subscribe(requestId => {
       this.route.params.map(p => p.treatment).subscribe(treatmentId => {
         this.requestService.get().subscribe(requests => {
-          this.request = requests.find(r => r.id == requestId);
-          this.treatment = this.request.Result.treatment.find(t => t.id == treatmentId);
+          this.request = requests.find(r => r.id === requestId);
+          this.treatment = this.request.Result.treatment.find(t => t.id === treatmentId);
 
           console.log(this.treatment);
         });
