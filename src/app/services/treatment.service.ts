@@ -21,4 +21,9 @@ export class TreatmentService {
     return this.http.post(`${environment.host}${this.col}`, {publicKey: pub_key, treatment: treatment})
                     .map(res=>{return true;})
   }
+
+  postRedeem(pub_key: string, treatmentId: string): Observable<boolean> {
+    return this.http.post(`${environment.host}${this.col}/redeem`, {publicKey: pub_key, treatmentId: treatmentId})
+                    .map(res=>{return true;})
+  }
 }

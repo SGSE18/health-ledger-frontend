@@ -1,8 +1,12 @@
-<div fxLayout="column" fxLayoutAlign="space-between stretch" >
-    <div fxLayout="row" fxLayoutAlign="start center" >
-        <button mat-raised-button color="accent" (click)="onClose()">Zurück</button>
+<div fxLayout="column" fxLayoutAlign="space-between stretch">
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <div fxFlex="70" fxLayout="row" fxLayoutAlign="start center">
+      <button mat-raised-button color="accent" (click)="onClose()">Zurück</button>
     </div>
-    <br/>
-    
-    <app-treatment [treatment]="treatment"></app-treatment>
+    <spinner-button [options]="redeemButtonOptions" (click)="redeem()"></spinner-button>
+
+  </div>
+  <br/>
+
+  <app-treatment [treatment]="treatment"></app-treatment>
 </div>

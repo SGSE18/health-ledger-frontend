@@ -77,4 +77,8 @@ export class AppComponent {
     }
     return false;
   }
+
+  logout() {
+    this.state.invalidate();
+  }
 }
