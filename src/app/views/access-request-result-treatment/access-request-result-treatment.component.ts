@@ -39,8 +39,8 @@ export class AccessRequestResultTreatmentComponent implements OnInit {
     this.route.params.map(p => p.request).subscribe(requestId => {
       this.route.params.map(p => p.treatment).subscribe(treatmentId => {
         this.requestService.get().subscribe(requests => {
-          this.request = requests.find(r => r.id == requestId);
-          this.treatment = this.request.Result.treatment.find(t => t.id == treatmentId);
+          this.request = requests.find(r => r.id === requestId);
+          this.treatment = this.request.Result.treatment.find(t => t.id === treatmentId);
 
           console.log(this.treatment);
         });
@@ -57,6 +57,7 @@ export class AccessRequestResultTreatmentComponent implements OnInit {
 
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
+      verticalPosition: 'top'
     });
   }
 
@@ -72,7 +73,7 @@ export class AccessRequestResultTreatmentComponent implements OnInit {
       err => {
         this.redeemButtonOptions.active = false;
         this.redeemButtonOptions.text = 'Einlösen';
-        this.openSnackBar('FEHLER: Rezept kann nicht eingelöst werden!', 'Okay');
+        this.openSnackBar('Rezept wurde bereits eingelöst!', 'Okay');
       });
   }
 
