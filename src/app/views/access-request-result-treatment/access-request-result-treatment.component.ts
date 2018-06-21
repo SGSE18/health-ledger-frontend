@@ -72,7 +72,7 @@ export class AccessRequestResultTreatmentComponent implements OnInit {
       err => {
         this.redeemButtonOptions.active = false;
         this.redeemButtonOptions.text = 'Einlösen';
-        this.openSnackBar('Rezept kann nicht eingelöst werden!', 'Okay');
+        this.openSnackBar('FEHLER: Rezept kann nicht eingelöst werden!', 'Okay');
       });
   }
 
