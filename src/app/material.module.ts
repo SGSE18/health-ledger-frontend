@@ -20,7 +20,8 @@ import {
   MatProgressBarModule,
   MatProgressSpinnerModule,
   MatSelectModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MAT_DATE_LOCALE
 } from '@angular/material';
 
 @NgModule({
@@ -62,6 +63,9 @@ import {
     MatProgressSpinnerModule,
     MatSelectModule,
     MatSnackBarModule
+  ],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
   ]
 })
 export class MaterialModule {}

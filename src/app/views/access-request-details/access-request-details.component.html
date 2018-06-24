@@ -15,7 +15,7 @@
   </div>
   <div>
     <mat-form-field>
-      <input matInput [matDatepicker]="picker1" placeholder="Einsicht ab:" [(ngModel)]="request.since" readonly>
+      <input matInput [matDatepicker]="picker1" (click)="picker1.open()" placeholder="Einsicht ab:" [(ngModel)]="request.since" readonly>
       <mat-datepicker #picker1></mat-datepicker>
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
     </mat-form-field>

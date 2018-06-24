@@ -13,12 +13,15 @@ import { StateService } from '../../services/state.service';
 export class AccessRequestResultComponent implements OnInit {
   request:Request;
   isDoctor = false;
+  isPatient = false;
 
   constructor(private requestService:RequestService,
               private stateService:StateService,
               private route:ActivatedRoute,
               private router: Router) {
-    this.isDoctor = this.stateService.user.type == "Arzt";
+    this.isDoctor = this.stateService.user.type == 'Arzt';
+    this.isPatient = this.stateService.user.type == 'Patient';
+
     this.route.params.map(p => p.id).subscribe(id => {
       this.requestService.get().subscribe(requests=>{
         this.request = requests.find(r => r.id == id);
